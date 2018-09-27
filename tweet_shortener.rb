@@ -16,6 +16,8 @@ def word_substituter(tweet)
   tweet.collect do |word|
     if keys.include?(word)
       word = dictionary[word]
+    else
+      word = word
      end
    end
    tweet.join("")
