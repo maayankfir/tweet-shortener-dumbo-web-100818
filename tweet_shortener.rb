@@ -22,7 +22,7 @@ def word_substituter(tweet)
    tweet.join(" ")
  end
 
- def bulk_tweet_shortener
+ def bulk_tweet_shortener(tweet)
    tweet = tweet.split(" ").collect do |word|
      if dictionary.keys.include?(word)
        word = dictionary[word]
