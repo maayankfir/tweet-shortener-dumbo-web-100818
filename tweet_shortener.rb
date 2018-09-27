@@ -12,10 +12,11 @@ def dictionary
 end
 def word_substituter(tweet)
   tweet = tweet.split("")
-  dictionary_hash.keys.collect do |key, value|
-    if tweet.include?(key)
-      key = value
-       tweet.join
+  keys = dictionary_hash.keys
+  tweet.collect do |word|
+    if keys.include?(word)
+      word = dictionary_hash[word]
      end
    end
+   tweet.join(" ")
  end
