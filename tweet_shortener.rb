@@ -11,10 +11,8 @@ def dictionary
   }
 end
 def word_substituter(tweet)
-  tweet = tweet.split(" ")
-  keys = dictionary.keys
-  tweet = tweet.collect do |word|
-    if keys.include?(word)
+  tweet.split(" ").collect do |word|
+    if dictionary.keys.include?(word)
       word = dictionary[word]
     else
       word = word
