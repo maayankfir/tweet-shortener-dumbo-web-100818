@@ -10,6 +10,7 @@ def dictionary
     "and" => "&"
   }
 end
+
 def word_substituter(tweet)
   tweet = tweet.split(" ").collect do |word|
     if dictionary.keys.include?(word)
@@ -19,4 +20,15 @@ def word_substituter(tweet)
      end
    end
    tweet.join(" ")
+ end
+
+ def bulk_tweet_shortener
+   tweet = tweet.split(" ").collect do |word|
+     if dictionary.keys.include?(word)
+       word = dictionary[word]
+     else
+       word = word
+      end
+    end
+  puts  tweet.join(" ")
  end
